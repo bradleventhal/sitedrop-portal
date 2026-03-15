@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SiteDrop Master Portal</title>
+  <meta name="description" content="SiteDrop master portal: landing, previews, CRM, pitch, dashboard, and launch snapshot." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0F172A;--card:#13203b;--line:#27406b;--text:#F8FAFC;--muted:#94a3b8;--teal:#14B8A6}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}
+    .wrap{max-width:1100px;margin:0 auto;padding:18px}
+    h1,h2,h3{font-family:'Space Grotesk',Inter,sans-serif;margin:.2rem 0 .7rem}
+    h1{font-size:1.8rem} h2{font-size:1.2rem;color:var(--teal)} h3{font-size:1rem}
+    .muted{color:var(--muted);font-size:.92rem}
+    .grid{display:grid;gap:12px}.cols{grid-template-columns:1fr}@media(min-width:920px){.cols{grid-template-columns:1fr 1fr}}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+    .links a{display:block;padding:10px 12px;margin:8px 0;border:1px solid #335486;border-radius:10px;color:#b6f6ee;text-decoration:none;background:#0f1c35}
+    .links a:hover{border-color:var(--teal)}
+    .kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}@media(min-width:700px){.kpis{grid-template-columns:repeat(4,1fr)}}
+    .kpi{background:#0f1a31;border:1px solid #2e4b7f;border-radius:10px;padding:10px;text-align:center}
+    .kpi b{display:block;font-size:1.3rem;margin-top:4px}
+    ul{margin:0;padding-left:18px;line-height:1.7}
+    .status{display:inline-block;padding:4px 10px;border-radius:999px;background:#123b35;color:#96f6e9;font-size:.8rem;font-weight:600}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>SiteDrop Master Portal</h1>
+    <p class="muted">Single control page for all SiteDrop assets. GitHub Pages only. Last updated: 2026-03-15.</p>
+
+    <section class="card links">
+      <h2>Core Links</h2>
+      <a href="https://bradleventhal.github.io/sitedrop" target="_blank">Landing Page</a>
+      <a href="https://bradleventhal.github.io/sitedrop-previews" target="_blank">26 Preview Sites</a>
+      <a href="https://bradleventhal.github.io/sitedrop-crm" target="_blank">CRM</a>
+      <a href="https://bradleventhal.github.io/sitedrop-pitch" target="_blank">Pitch Deck</a>
+      <a href="https://bradleventhal.github.io/sitedrop-dashboard" target="_blank">Dashboard</a>
+    </section>
+
+    <section class="card">
+      <h2>Launch Snapshot</h2>
+      <div class="kpis">
+        <div class="kpi"><div class="muted">Prospect Count</div><b>30</b></div>
+        <div class="kpi"><div class="muted">Preview Sites Live</div><b>26</b></div>
+        <div class="kpi"><div class="muted">Pricing Tiers</div><b>3</b></div>
+        <div class="kpi"><div class="muted">Launch Status</div><b><span class="status">Pages Live</span></b></div>
+      </div>
+    </section>
+
+    <div class="grid cols" style="margin-top:12px">
+      <section class="card">
+        <h2>Business Plan Summary</h2>
+        <ul>
+          <li>SiteDrop builds, launches, and maintains local business websites end-to-end.</li>
+          <li>North Fulton launch wedge: Alpharetta, Roswell, Johns Creek, Milton, Cumming.</li>
+          <li>Preview-first sales motion: show value before payment ask.</li>
+          <li>Managed recurring model with clear service scope and delivery cadence.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Financial Projections Summary</h2>
+        <ul>
+          <li>Primary KPI stack: MRR, client count, churn, close rate, launch SLA.</li>
+          <li>Early focus: convert preview pipeline into first 25–50 retained clients.</li>
+          <li>Recurring revenue growth driven by active client base expansion.</li>
+          <li>Operational leverage improves as template/process reuse increases.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Pricing Tiers</h2>
+        <ul>
+          <li><b>Starter — $99/mo:</b> 3-page site, mobile optimization, local SEO basics, hosting, 1 edit/month.</li>
+          <li><b>Growth — $199/mo:</b> Full site, service area pages, call/form tracking, 3 edits/month, monthly report.</li>
+          <li><b>Pro — $299/mo:</b> Everything in Growth + booking/payment setup, priority support, conversion optimization.</li>
+          <li><b>Differentiator:</b> No setup fees on any tier.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Launch Status</h2>
+        <ul>
+          <li>GitHub Pages assets are the production-facing channel for current launch.</li>
+          <li>Previews are deployed and shareable for outbound prospecting.</li>
+          <li>CRM and Dashboard endpoints are listed for operator use.</li>
+          <li>Portal provides single-entry navigation for Brad’s 1pm review.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
