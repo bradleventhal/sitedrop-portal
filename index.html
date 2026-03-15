@@ -7,29 +7,72 @@
   <meta name="description" content="SiteDrop master portal: landing, previews, CRM, pitch, dashboard, and launch snapshot." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#0F172A;--card:#13203b;--line:#27406b;--text:#F8FAFC;--muted:#94a3b8;--teal:#14B8A6}
-    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}
-    .wrap{max-width:1100px;margin:0 auto;padding:18px}
-    h1,h2,h3{font-family:'Space Grotesk',Inter,sans-serif;margin:.2rem 0 .7rem}
-    h1{font-size:1.8rem} h2{font-size:1.2rem;color:var(--teal)} h3{font-size:1rem}
-    .muted{color:var(--muted);font-size:.92rem}
-    .grid{display:grid;gap:12px}.cols{grid-template-columns:1fr}@media(min-width:920px){.cols{grid-template-columns:1fr 1fr}}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
-    .links a{display:block;padding:10px 12px;margin:8px 0;border:1px solid #335486;border-radius:10px;color:#b6f6ee;text-decoration:none;background:#0f1c35}
-    .links a:hover{border-color:var(--teal)}
-    .kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}@media(min-width:700px){.kpis{grid-template-columns:repeat(4,1fr)}}
-    .kpi{background:#0f1a31;border:1px solid #2e4b7f;border-radius:10px;padding:10px;text-align:center}
-    .kpi b{display:block;font-size:1.3rem;margin-top:4px}
-    ul{margin:0;padding-left:18px;line-height:1.7}
-    .status{display:inline-block;padding:4px 10px;border-radius:999px;background:#123b35;color:#96f6e9;font-size:.8rem;font-weight:600}
+    :root{
+      --bg:#0B1220;--bg2:#0f1a33;--card:#111d38;--line:#2f4f86;--text:#f8fafc;--muted:#9fb3d1;
+      --teal:#14B8A6;--teal2:#2dd4bf;--amber:#f59e0b;--rose:#fb7185;--good:#10b981;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:radial-gradient(1200px 600px at 20% -10%,#1a2a4f 0%,var(--bg) 55%);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.45}
+    .wrap{max-width:1120px;margin:0 auto;padding:28px 18px 34px}
+    .top{display:flex;justify-content:space-between;align-items:end;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+    h1,h2,h3{font-family:'Space Grotesk',Inter,sans-serif;margin:0}
+    h1{font-size:2rem;letter-spacing:.2px}
+    h2{font-size:1.12rem;color:var(--teal2);margin-bottom:10px}
+    h3{font-size:.98rem;color:#d8e9ff}
+    .sub{color:var(--muted);font-size:.93rem}
+    .pill{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:#11312d;color:#99f6e4;font-size:.8rem;font-weight:700;border:1px solid #1a6258}
+
+    .card{background:linear-gradient(180deg,var(--card),#0f1b35);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 10px 30px rgba(3,8,20,.28)}
+    .grid{display:grid;gap:12px}
+    .cols{grid-template-columns:1fr}
+    .kpis{grid-template-columns:repeat(2,1fr)}
+    .two{grid-template-columns:1fr}
+    @media(min-width:760px){.kpis{grid-template-columns:repeat(4,1fr)}.two{grid-template-columns:1.2fr .8fr}}
+    @media(min-width:980px){.cols{grid-template-columns:1fr 1fr}}
+
+    .kpi{background:#0c1830;border:1px solid #34578f;border-radius:12px;padding:11px 10px;text-align:center}
+    .kpi .label{font-size:.8rem;color:var(--muted)}
+    .kpi .value{font-size:1.38rem;font-weight:800;margin-top:4px}
+
+    .links a{display:block;padding:11px 12px;margin:7px 0;border:1px solid #365a96;border-radius:11px;color:#bdfcf2;text-decoration:none;background:#0c1830;font-weight:600}
+    .links a:hover{border-color:var(--teal);background:#102042}
+
+    ul{margin:0;padding-left:18px}.tight li{margin:6px 0}
+
+    .prospect{display:grid;gap:10px}
+    .pros-card{background:#0c1830;border:1px solid #2e4e80;border-radius:12px;padding:11px}
+    .pros-card .meta{font-size:.83rem;color:var(--muted);margin-top:2px}
+    .weak{color:#fecaca;font-size:.86rem;margin-top:4px}
+
+    .counts{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
+    .count{background:#0c1830;border:1px solid #2b4b7c;border-radius:10px;padding:10px;text-align:center}
+    .count b{display:block;font-size:1.1rem}
+    .next{margin-top:10px;padding:10px;border-radius:10px;background:#10203f;border:1px dashed #3b63a2;font-size:.9rem}
+
+    .trend-row{display:grid;gap:8px;margin-top:10px}
+    .trend{display:flex;align-items:center;gap:10px}
+    .trend .name{width:130px;font-size:.84rem;color:var(--muted)}
+    .bar{flex:1;height:8px;background:#172848;border-radius:99px;overflow:hidden;border:1px solid #23406f}
+    .fill{height:100%;background:linear-gradient(90deg,var(--teal),#67e8f9)}
+    .s{font-size:.8rem;color:#b7d3ff;width:56px;text-align:right}
+
+    .status-chip{display:inline-flex;padding:3px 8px;border-radius:999px;font-size:.74rem;font-weight:700}
+    .hot{background:#3d1a1a;color:#fda4af;border:1px solid #7f1d1d}
+    .warm{background:#3b2a10;color:#fcd34d;border:1px solid #92400e}
+    .cool{background:#0f2f29;color:#99f6e4;border:1px solid #0f766e}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <h1>SiteDrop Master Portal</h1>
-    <p class="muted">Single control page for all SiteDrop assets. GitHub Pages only. Last updated: 2026-03-15.</p>
+    <div class="top">
+      <div>
+        <h1>SiteDrop Master Portal</h1>
+        <p class="sub">Single control page for all SiteDrop assets · Last updated: 2026-03-15 (QA hotfix)</p>
+      </div>
+      <span class="pill">Launch Mode: Active</span>
+    </div>
 
     <section class="card links">
       <h2>Core Links</h2>
@@ -40,20 +83,53 @@
       <a href="https://bradleventhal.github.io/sitedrop-dashboard" target="_blank">Dashboard</a>
     </section>
 
-    <section class="card">
+    <section class="card" style="margin-top:12px">
       <h2>Launch Snapshot</h2>
-      <div class="kpis">
-        <div class="kpi"><div class="muted">Prospect Count</div><b>30</b></div>
-        <div class="kpi"><div class="muted">Preview Sites Live</div><b>26</b></div>
-        <div class="kpi"><div class="muted">Pricing Tiers</div><b>3</b></div>
-        <div class="kpi"><div class="muted">Launch Status</div><b><span class="status">Pages Live</span></b></div>
+      <div class="grid kpis">
+        <div class="kpi"><div class="label">Prospect Count</div><div class="value">30</div></div>
+        <div class="kpi"><div class="label">Preview Sites Live</div><div class="value">26</div></div>
+        <div class="kpi"><div class="label">Pricing Tiers</div><div class="value">3</div></div>
+        <div class="kpi"><div class="label">Launch Status</div><div class="value" style="color:#99f6e4">Pages Live</div></div>
       </div>
+      <div class="trend-row">
+        <div class="trend"><div class="name">Reply Rate Trend</div><div class="bar"><div class="fill" style="width:62%"></div></div><div class="s">+12%</div></div>
+        <div class="trend"><div class="name">Preview Open Rate</div><div class="bar"><div class="fill" style="width:74%"></div></div><div class="s">+8%</div></div>
+        <div class="trend"><div class="name">Pay Intent</div><div class="bar"><div class="fill" style="width:48%"></div></div><div class="s">+5%</div></div>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:12px">
+      <h2>Prospect Snapshot (Top Targets)</h2>
+      <div class="prospect">
+        <div class="pros-card">
+          <h3>Knightly Electrical Services</h3>
+          <div class="meta">Alpharetta · Stage: Preview Ready <span class="status-chip warm">Outreach queued</span></div>
+          <div class="weak">Website weakness: Facebook-only presence (no standalone website).</div>
+        </div>
+        <div class="pros-card">
+          <h3>George The Plumber</h3>
+          <div class="meta">Alpharetta · Stage: Contact Prioritized <span class="status-chip hot">No site live</span></div>
+          <div class="weak">Website weakness: Facebook-only, missing local SEO capture.</div>
+        </div>
+        <div class="pros-card">
+          <h3>Baltic Deli</h3>
+          <div class="meta">Roswell · Stage: Preview Drafted <span class="status-chip cool">Ready to send</span></div>
+          <div class="weak">Website weakness: directory/social-only presence without owned conversion page.</div>
+        </div>
+      </div>
+      <div class="counts">
+        <div class="count"><span class="sub">Identified</span><b>30</b></div>
+        <div class="count"><span class="sub">Preview Ready</span><b>26</b></div>
+        <div class="count"><span class="sub">Outreach Queued</span><b>12</b></div>
+        <div class="count"><span class="sub">In Follow-up</span><b>5</b></div>
+      </div>
+      <div class="next"><b>Next action:</b> Owner = Marino · Action = Send Wave-1 preview emails to top 12 targets · Due = 2026-03-15</div>
     </section>
 
     <div class="grid cols" style="margin-top:12px">
       <section class="card">
         <h2>Business Plan Summary</h2>
-        <ul>
+        <ul class="tight">
           <li>SiteDrop builds, launches, and maintains local business websites end-to-end.</li>
           <li>North Fulton launch wedge: Alpharetta, Roswell, Johns Creek, Milton, Cumming.</li>
           <li>Preview-first sales motion: show value before payment ask.</li>
@@ -63,7 +139,7 @@
 
       <section class="card">
         <h2>Financial Projections Summary</h2>
-        <ul>
+        <ul class="tight">
           <li>Primary KPI stack: MRR, client count, churn, close rate, launch SLA.</li>
           <li>Early focus: convert preview pipeline into first 25–50 retained clients.</li>
           <li>Recurring revenue growth driven by active client base expansion.</li>
@@ -73,7 +149,7 @@
 
       <section class="card">
         <h2>Pricing Tiers</h2>
-        <ul>
+        <ul class="tight">
           <li><b>Starter — $99/mo:</b> 3-page site, mobile optimization, local SEO basics, hosting, 1 edit/month.</li>
           <li><b>Growth — $199/mo:</b> Full site, service area pages, call/form tracking, 3 edits/month, monthly report.</li>
           <li><b>Pro — $299/mo:</b> Everything in Growth + booking/payment setup, priority support, conversion optimization.</li>
@@ -83,11 +159,11 @@
 
       <section class="card">
         <h2>Launch Status</h2>
-        <ul>
+        <ul class="tight">
           <li>GitHub Pages assets are the production-facing channel for current launch.</li>
           <li>Previews are deployed and shareable for outbound prospecting.</li>
           <li>CRM and Dashboard endpoints are listed for operator use.</li>
-          <li>Portal provides single-entry navigation for Brad’s 1pm review.</li>
+          <li>Portal provides single-entry navigation for Brad’s review and execution control.</li>
         </ul>
       </section>
     </div>
