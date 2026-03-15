@@ -1,172 +1,117 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SiteDrop Master Portal</title>
-  <meta name="description" content="SiteDrop master portal: landing, previews, CRM, pitch, dashboard, and launch snapshot." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GrowthCurb Client Portal — Wireframe</title>
   <style>
-    :root{
-      --bg:#0B1220;--bg2:#0f1a33;--card:#111d38;--line:#2f4f86;--text:#f8fafc;--muted:#9fb3d1;
-      --teal:#14B8A6;--teal2:#2dd4bf;--amber:#f59e0b;--rose:#fb7185;--good:#10b981;
-    }
-    *{box-sizing:border-box}
-    body{margin:0;background:radial-gradient(1200px 600px at 20% -10%,#1a2a4f 0%,var(--bg) 55%);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.45}
-    .wrap{max-width:1120px;margin:0 auto;padding:28px 18px 34px}
-    .top{display:flex;justify-content:space-between;align-items:end;gap:14px;flex-wrap:wrap;margin-bottom:16px}
-    h1,h2,h3{font-family:'Space Grotesk',Inter,sans-serif;margin:0}
-    h1{font-size:2rem;letter-spacing:.2px}
-    h2{font-size:1.12rem;color:var(--teal2);margin-bottom:10px}
-    h3{font-size:.98rem;color:#d8e9ff}
-    .sub{color:var(--muted);font-size:.93rem}
-    .pill{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:#11312d;color:#99f6e4;font-size:.8rem;font-weight:700;border:1px solid #1a6258}
-
-    .card{background:linear-gradient(180deg,var(--card),#0f1b35);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 10px 30px rgba(3,8,20,.28)}
-    .grid{display:grid;gap:12px}
-    .cols{grid-template-columns:1fr}
-    .kpis{grid-template-columns:repeat(2,1fr)}
-    .two{grid-template-columns:1fr}
-    @media(min-width:760px){.kpis{grid-template-columns:repeat(4,1fr)}.two{grid-template-columns:1.2fr .8fr}}
-    @media(min-width:980px){.cols{grid-template-columns:1fr 1fr}}
-
-    .kpi{background:#0c1830;border:1px solid #34578f;border-radius:12px;padding:11px 10px;text-align:center}
-    .kpi .label{font-size:.8rem;color:var(--muted)}
-    .kpi .value{font-size:1.38rem;font-weight:800;margin-top:4px}
-
-    .links a{display:block;padding:11px 12px;margin:7px 0;border:1px solid #365a96;border-radius:11px;color:#bdfcf2;text-decoration:none;background:#0c1830;font-weight:600}
-    .links a:hover{border-color:var(--teal);background:#102042}
-
-    ul{margin:0;padding-left:18px}.tight li{margin:6px 0}
-
-    .prospect{display:grid;gap:10px}
-    .pros-card{background:#0c1830;border:1px solid #2e4e80;border-radius:12px;padding:11px}
-    .pros-card .meta{font-size:.83rem;color:var(--muted);margin-top:2px}
-    .weak{color:#fecaca;font-size:.86rem;margin-top:4px}
-
-    .counts{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
-    .count{background:#0c1830;border:1px solid #2b4b7c;border-radius:10px;padding:10px;text-align:center}
-    .count b{display:block;font-size:1.1rem}
-    .next{margin-top:10px;padding:10px;border-radius:10px;background:#10203f;border:1px dashed #3b63a2;font-size:.9rem}
-
-    .trend-row{display:grid;gap:8px;margin-top:10px}
-    .trend{display:flex;align-items:center;gap:10px}
-    .trend .name{width:130px;font-size:.84rem;color:var(--muted)}
-    .bar{flex:1;height:8px;background:#172848;border-radius:99px;overflow:hidden;border:1px solid #23406f}
-    .fill{height:100%;background:linear-gradient(90deg,var(--teal),#67e8f9)}
-    .s{font-size:.8rem;color:#b7d3ff;width:56px;text-align:right}
-
-    .status-chip{display:inline-flex;padding:3px 8px;border-radius:999px;font-size:.74rem;font-weight:700}
-    .hot{background:#3d1a1a;color:#fda4af;border:1px solid #7f1d1d}
-    .warm{background:#3b2a10;color:#fcd34d;border:1px solid #92400e}
-    .cool{background:#0f2f29;color:#99f6e4;border:1px solid #0f766e}
+    :root{--bg:#f4f6fb;--card:#fff;--line:#dbe1ea;--txt:#1f2937;--muted:#64748b;--brand:#2563eb}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--txt)}
+    .top{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;background:#fff;border-bottom:1px solid var(--line)}
+    .shell{display:grid;grid-template-columns:220px 1fr;min-height:calc(100vh - 58px)}
+    .side{background:#0f172a;color:#cbd5e1;padding:14px}.side h3{margin:0 0 10px;color:#fff}.side a{display:block;padding:8px 10px;border-radius:8px;color:#cbd5e1;text-decoration:none}.side a.active,.side a:hover{background:#1e293b;color:#fff}
+    .main{padding:16px;display:grid;gap:14px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px}
+    .k{font-size:.8rem;color:var(--muted)} .v{font-size:1.2rem;font-weight:700;margin-top:4px}
+    .row{display:grid;grid-template-columns:1.2fr .8fr;gap:12px}
+    .wf-table{width:100%;border-collapse:collapse;font-size:.86rem}.wf-table th,.wf-table td{padding:8px;border-bottom:1px solid var(--line);text-align:left}
+    .badge{display:inline-block;padding:2px 8px;border-radius:999px;background:#dbeafe;color:#1e40af;font-size:.75rem}
+    .btn{border:1px solid var(--line);padding:8px 10px;border-radius:8px;background:#fff}.btn.primary{background:var(--brand);color:#fff;border-color:var(--brand)}
+    textarea,input,select{width:100%;padding:8px;border:1px solid var(--line);border-radius:8px}
+    .muted{color:var(--muted);font-size:.83rem}
+    @media(max-width:980px){.shell{grid-template-columns:1fr}.side{display:none}.row{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="top">
-      <div>
-        <h1>SiteDrop Master Portal</h1>
-        <p class="sub">[QA-HOTFIX-MARKER-2026-03-15-1236ET] Single control page for all SiteDrop assets · Last updated: 2026-03-15 (QA hotfix)</p>
-      </div>
-      <span class="pill">Launch Mode: Active</span>
-    </div>
+  <header class="top">
+    <div><strong>GrowthCurb Client Portal</strong><div class="muted">Wireframe • Account: Acme Dental</div></div>
+    <div><button class="btn">Help</button> <button class="btn primary">Request Edit</button></div>
+  </header>
 
-    <section class="card links">
-      <h2>Core Links</h2>
-      <a href="https://bradleventhal.github.io/sitedrop" target="_blank">Landing Page</a>
-      <a href="https://bradleventhal.github.io/sitedrop-previews" target="_blank">26 Preview Sites</a>
-      <a href="https://bradleventhal.github.io/sitedrop-crm" target="_blank">CRM</a>
-      <a href="https://bradleventhal.github.io/sitedrop-pitch" target="_blank">Pitch Deck</a>
-      <a href="https://bradleventhal.github.io/sitedrop-dashboard" target="_blank">Dashboard</a>
-    </section>
+  <div class="shell">
+    <nav class="side">
+      <h3>Portal</h3>
+      <a class="active" href="#">Dashboard</a>
+      <a href="#">Site Status</a>
+      <a href="#">Edit Requests</a>
+      <a href="#">Monthly Reports</a>
+      <a href="#">Google Rankings</a>
+      <a href="#">Subscription</a>
+      <a href="#">Billing & Invoices</a>
+      <a href="#">Support</a>
+    </nav>
 
-    <section class="card" style="margin-top:12px">
-      <h2>Launch Snapshot</h2>
-      <div class="grid kpis">
-        <div class="kpi"><div class="label">Prospect Count</div><div class="value">30</div></div>
-        <div class="kpi"><div class="label">Preview Sites Live</div><div class="value">26</div></div>
-        <div class="kpi"><div class="label">Pricing Tiers</div><div class="value">3</div></div>
-        <div class="kpi"><div class="label">Launch Status</div><div class="value" style="color:#99f6e4">Pages Live</div></div>
-      </div>
-      <div class="trend-row">
-        <div class="trend"><div class="name">Reply Rate Trend</div><div class="bar"><div class="fill" style="width:62%"></div></div><div class="s">+12%</div></div>
-        <div class="trend"><div class="name">Preview Open Rate</div><div class="bar"><div class="fill" style="width:74%"></div></div><div class="s">+8%</div></div>
-        <div class="trend"><div class="name">Pay Intent</div><div class="bar"><div class="fill" style="width:48%"></div></div><div class="s">+5%</div></div>
-      </div>
-    </section>
+    <main class="main">
+      <section class="grid">
+        <article class="card"><div class="k">Site Status</div><div class="v">Live</div><span class="badge">99.98% uptime</span></article>
+        <article class="card"><div class="k">Current Plan</div><div class="v">Growth + SEO</div><span class="badge">$348 / month</span></article>
+        <article class="card"><div class="k">Google Avg Rank</div><div class="v">#6.2</div><span class="badge">+1.8 MoM</span></article>
+        <article class="card"><div class="k">Open Edit Requests</div><div class="v">2</div><span class="badge">1 due today</span></article>
+      </section>
 
-    <section id="prospect-snapshot" class="card" style="margin-top:12px">
-      <h2>Prospect Snapshot (Top Targets)</h2>
-      <div class="prospect">
-        <div class="pros-card">
-          <h3>Knightly Electrical Services</h3>
-          <div class="meta">Alpharetta · Stage: Preview Ready <span class="status-chip warm">Outreach queued</span></div>
-          <div class="weak">Website weakness: Facebook-only presence (no standalone website).</div>
+      <section class="row">
+        <article class="card">
+          <h3>Site Status Timeline</h3>
+          <table class="wf-table">
+            <thead><tr><th>Phase</th><th>Status</th><th>Owner</th><th>ETA</th></tr></thead>
+            <tbody>
+              <tr><td>Homepage Refresh</td><td><span class="badge">In QA</span></td><td>GrowthCurb</td><td>Mar 18</td></tr>
+              <tr><td>New Service Page</td><td><span class="badge">Building</span></td><td>GrowthCurb</td><td>Mar 20</td></tr>
+              <tr><td>Schema Markup</td><td><span class="badge">Scheduled</span></td><td>GrowthCurb</td><td>Mar 22</td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="card">
+          <h3>Request a Site Edit</h3>
+          <div class="grid">
+            <label>Page<select><option>Homepage</option><option>Services</option><option>Contact</option></select></label>
+            <label>Priority<select><option>Normal</option><option>High</option><option>Urgent</option></select></label>
+          </div>
+          <label style="margin-top:8px;display:block">Change details<textarea rows="5" placeholder="Describe what should change and why..."></textarea></label>
+          <div style="margin-top:10px"><button class="btn primary">Submit Request</button></div>
+        </article>
+      </section>
+
+      <section class="row">
+        <article class="card">
+          <h3>Monthly Report Snapshot</h3>
+          <table class="wf-table">
+            <thead><tr><th>Metric</th><th>Last Month</th><th>This Month</th><th>Trend</th></tr></thead>
+            <tbody>
+              <tr><td>Organic Traffic</td><td>2,840</td><td>3,210</td><td>+13.0%</td></tr>
+              <tr><td>Form Leads</td><td>47</td><td>61</td><td>+29.8%</td></tr>
+              <tr><td>Call Clicks</td><td>88</td><td>104</td><td>+18.1%</td></tr>
+            </tbody>
+          </table>
+          <p class="muted">Full PDF/CSV report download and annotated recommendations live here.</p>
+        </article>
+
+        <article class="card">
+          <h3>Google Ranking Monitor</h3>
+          <table class="wf-table">
+            <thead><tr><th>Keyword</th><th>Current</th><th>Previous</th><th>Delta</th></tr></thead>
+            <tbody>
+              <tr><td>dentist alpharetta</td><td>#5</td><td>#7</td><td>↑2</td></tr>
+              <tr><td>teeth whitening alpharetta</td><td>#3</td><td>#4</td><td>↑1</td></tr>
+              <tr><td>emergency dentist alpharetta</td><td>#9</td><td>#8</td><td>↓1</td></tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+
+      <section class="card">
+        <h3>Subscription & Billing</h3>
+        <div class="grid">
+          <article class="card" style="padding:10px"><div class="k">Base Plan</div><div class="v">$199</div><div class="muted">Managed site + hosting + support</div></article>
+          <article class="card" style="padding:10px"><div class="k">SEO Add-on</div><div class="v">$79</div><div class="muted">Local SEO + rank tracking</div></article>
+          <article class="card" style="padding:10px"><div class="k">Reviews Add-on</div><div class="v">$49</div><div class="muted">Review response + sentiment monitor</div></article>
+          <article class="card" style="padding:10px"><div class="k">AI Chat Add-on</div><div class="v">$59</div><div class="muted">Lead capture chat assistant</div></article>
         </div>
-        <div class="pros-card">
-          <h3>George The Plumber</h3>
-          <div class="meta">Alpharetta · Stage: Contact Prioritized <span class="status-chip hot">No site live</span></div>
-          <div class="weak">Website weakness: Facebook-only, missing local SEO capture.</div>
-        </div>
-        <div class="pros-card">
-          <h3>Baltic Deli</h3>
-          <div class="meta">Roswell · Stage: Preview Drafted <span class="status-chip cool">Ready to send</span></div>
-          <div class="weak">Website weakness: directory/social-only presence without owned conversion page.</div>
-        </div>
-      </div>
-      <div class="counts">
-        <div class="count"><span class="sub">Identified</span><b>30</b></div>
-        <div class="count"><span class="sub">Preview Ready</span><b>26</b></div>
-        <div class="count"><span class="sub">Outreach Queued</span><b>12</b></div>
-        <div class="count"><span class="sub">In Follow-up</span><b>5</b></div>
-      </div>
-      <div class="next"><b>Next action:</b> Owner = Marino · Action = Send Wave-1 preview emails to top 12 targets · Due = 2026-03-15</div>
-    </section>
-
-    <div class="grid cols" style="margin-top:12px">
-      <section class="card">
-        <h2>Business Plan Summary</h2>
-        <ul class="tight">
-          <li>SiteDrop builds, launches, and maintains local business websites end-to-end.</li>
-          <li>North Fulton launch wedge: Alpharetta, Roswell, Johns Creek, Milton, Cumming.</li>
-          <li>Preview-first sales motion: show value before payment ask.</li>
-          <li>Managed recurring model with clear service scope and delivery cadence.</li>
-        </ul>
+        <div style="margin-top:10px"><button class="btn">Update Payment Method</button> <button class="btn">Change Plan</button> <button class="btn primary">Download Invoice</button></div>
       </section>
-
-      <section class="card">
-        <h2>Financial Projections Summary</h2>
-        <ul class="tight">
-          <li>Primary KPI stack: MRR, client count, churn, close rate, launch SLA.</li>
-          <li>Early focus: convert preview pipeline into first 25–50 retained clients.</li>
-          <li>Recurring revenue growth driven by active client base expansion.</li>
-          <li>Operational leverage improves as template/process reuse increases.</li>
-        </ul>
-      </section>
-
-      <section class="card">
-        <h2>Pricing Tiers</h2>
-        <ul class="tight">
-          <li><b>Starter — $99/mo:</b> 3-page site, mobile optimization, local SEO basics, hosting, 1 edit/month.</li>
-          <li><b>Growth — $199/mo:</b> Full site, service area pages, call/form tracking, 3 edits/month, monthly report.</li>
-          <li><b>Pro — $299/mo:</b> Everything in Growth + booking/payment setup, priority support, conversion optimization.</li>
-          <li><b>Differentiator:</b> No setup fees on any tier.</li>
-        </ul>
-      </section>
-
-      <section class="card">
-        <h2>Launch Status</h2>
-        <ul class="tight">
-          <li>GitHub Pages assets are the production-facing channel for current launch.</li>
-          <li>Previews are deployed and shareable for outbound prospecting.</li>
-          <li>CRM and Dashboard endpoints are listed for operator use.</li>
-          <li>Portal provides single-entry navigation for Brad’s review and execution control.</li>
-        </ul>
-      </section>
-      <p class="sub">VISUAL-UPGRADE-MARKER-2026-03-15: hierarchy/spacing/contrast + compact trends enabled.</p>
+    </main>
   </div>
 </body>
 </html>
